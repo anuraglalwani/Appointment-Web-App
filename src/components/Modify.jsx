@@ -8,6 +8,7 @@ import "./styles/Modify.css";
 function Modify() {
   const { id } = useParams();
   let navigate = useNavigate();
+   
   const [state, setState] = useState({
     date: "",
     time: "",
@@ -25,12 +26,13 @@ function Modify() {
 
     console.log(state);
     axios
-      .patch("http://localhost:5000/appointment/" + id, state)
-     // .patch("https://appointment-webapp.herokuapp.com/"+id, state)
+     // .patch("http://localhost:5000/appointment/" + id, state)
+      .patch("https://appointment-webapp.herokuapp.com/appointment/"+id, state)
       
       .then(function (response) {
-        console.log(response);
-        navigate("/allAppointments");
+        console.log(response.data);
+        alert(response.data);
+        navigate("/details/"+id);
       })
       .catch(function (error) {
         console.log(error);
@@ -49,9 +51,10 @@ function Modify() {
            Appointments List
         </Link>
       </div>
+
       <div className="card custom-card-body" style={{ width: "18rem", alignItems: "center" }}>
         <div className="card-body ">
-          {/* <h4 className="card-title">Modify Below</h4> */}
+          
           <form onSubmit={handleSubmit}>
             <label for="date">Select Date </label>
             <input

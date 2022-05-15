@@ -12,17 +12,18 @@ function Home() {
     date: "",
     time: "",
   });
+  const [alert, setAlert] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
-    
+
     console.log(state);
     axios
-      .post("http://localhost:5000/appointment", state)
-     // .post("https://appointment-webapp.herokuapp.com/appointment", state)
+      // .post("http://localhost:5000/appointment", state)
+      .post("https://appointment-webapp.herokuapp.com/appointment", state)
 
       .then(function (response) {
-        console.log(response);
+        setAlert(true);
       })
       .catch(function (error) {
         console.log(error);
@@ -46,16 +47,34 @@ function Home() {
 
   return (
     <div className="Home">
+      {alert&& (
+        <div
+          className="alert alert-warning alert-dismissible fade show"
+          role="alert"
+          style={{"padding":"20px"}}
+        >
+          <strong>Appointment added successfully!</strong>
+          <button
+            type="button"
+            className="btn-close alert-btn"
+            data-bs-dismiss="alert"
+            
+            aria-label="Close"
+          ></button>
+        </div>
+      )}
+
       <div className="home-header">
         <h2>Create Appointment</h2>
+
         <Link to="/allAppointments" className="btn btn-secondary custom-btn">
-         Appointments List
+          Appointments List
         </Link>
       </div>
 
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label for="username" className="form-label">
+          <label htmlFor="username" className="form-label">
             Username
           </label>
           <input
@@ -69,7 +88,7 @@ function Home() {
             placeholder="Username"
           />
         </div>
-        <label for="doctors">Select Doctor</label>
+        <label htmlFor="doctors">Select Doctor</label>
 
         <select name="doctor" id="doctors" onChange={handleChange} required>
           <option value="">Choose from below</option>
@@ -79,7 +98,7 @@ function Home() {
         </select>
 
         <div className="mb-3">
-          <label for="description" class="form-label">
+          <label htmlFor="description" className="form-label">
             Description
           </label>
           <input
@@ -95,7 +114,7 @@ function Home() {
         </div>
 
         <div className="date-div">
-          <label for="date">Select Date </label>
+          <label htmlFor="date">Select Date </label>
           <input
             required
             type="date"
@@ -107,7 +126,7 @@ function Home() {
         </div>
 
         <div className="time-div">
-          <label for="time">Select a time </label>
+          <label htmlFor="time">Select a time </label>
           <input
             required
             type="time"

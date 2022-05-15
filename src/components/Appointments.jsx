@@ -6,15 +6,19 @@ import { Link } from "react-router-dom";
 
 import "./styles/Appointments.css"
 
+
 function Appointments() {
   const [appointments, setAppointments] = useState([]);
+  const [ loading, setLoading] =useState(true);
   function fetchData() {
     axios
-      .get("http://localhost:5000/")
-      //.get("https://appointment-webapp.herokuapp.com/")
+      //.get("http://localhost:5000/")
+      .get("https://appointment-webapp.herokuapp.com/")
       .then((response) => {
         console.log(response.data.data);
+        setLoading(false);
         setAppointments(response.data.data);
+        
       })
       .catch((err) => {
         console.log(err);
@@ -34,6 +38,7 @@ function Appointments() {
           Home
         </Link>
       </div>
+      {loading && <h3>Loading...</h3>}
       {appointments?.map((appointment) => {
         return (
           <Shorts

@@ -30,3 +30,7 @@ button{
 select{
     margin-left: 2%;
 }
+.custom-toast{
+  color: #004d25;
+  margin-right: 2%;
+}
