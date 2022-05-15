@@ -1,0 +1,23 @@
+.modify {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 4%;
+  background-color: #c4ddff;
+  padding: 15px;
+  align-items: center;
+}
+.custom-card-body {
+ 
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.card-body input{
+    margin-left: 4%;
+}
+.date-input{
+    margin-left: 8% !important;
+
+}
+.modify-btn{
+    margin-top: 5%;
+}

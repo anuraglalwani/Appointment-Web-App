@@ -1,0 +1,25 @@
+.list {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 4%;
+  background-color: #c4ddff;
+  padding: 25px;
+}
+
+.list-header {
+  display: flex;
+}
+.list-header h2 {
+  flex: 1;
+}
+.card-custom {
+  margin-top: 2%;
+}
+.list-btns {
+  display: flex;
+}
+.link-btn {
+  padding: 8px !important;
+  margin-top: 2%;
+  margin-left: 5%;
+}

@@ -1,0 +1,32 @@
+.Home {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  background-color: #c4ddff;
+  padding: 25px;
+}
+.home-header {
+  display: flex;
+}
+.home-header h2 {
+  flex: 1;
+}
+.custom-btn {
+  margin-right: 5%;
+}
+label{
+    margin-top: 2%;
+    font-weight:600
+}
+button{
+    margin-top: 2%;
+}
+.time-div input {
+    margin-left: 2%;
+}
+.date-div input{
+  margin-left: 3%;
+}
+select{
+    margin-left: 2%;
+}
