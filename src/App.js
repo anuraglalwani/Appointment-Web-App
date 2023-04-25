@@ -8,7 +8,7 @@ import Appointments from "./components/Appointments";
 function App() {
   return (
     <div className="App">
-      <h1 className="AppHeader">Appointment App</h1>
+      <h1 className="AppHeader">MediMatch</h1>
      
 
       <BrowserRouter>
